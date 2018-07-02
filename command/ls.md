@@ -14,9 +14,8 @@ ls [选项] [目录名]
 参数 | 说明
 --|--
 -a, –all | 列出目录下的所有文件，包括以 . 开头的隐含文件
-| -A |同-a但不列出“.”(表示当前目录)和“..”(表示当前目录的父目录)。
-| -c | 配合 -lt：根据 ctime 排序及显示 ctime (文件状态最后更改的时间)  
-配合 -l：显示 ctime 但根据名称排序否则：根据 ctime 排序
+-A |同-a但不列出“.”(表示当前目录)和“..”(表示当前目录的父目录)。
+-c | 配合 -lt：根据 ctime 排序及显示 ctime (文件状态最后更改的时间)  <br>配合 -l：显示 ctime 但根据名称排序否则：根据 ctime 排序
 -C | 每栏由上至下列出项目
 –color[=WHEN] | 控制是否使用色彩分辨文件。WHEN 可以是'never'、'always'或'auto'其中之一
 -d, –directory |将目录象文件一样显示，而不是显示其下的文件。
@@ -39,18 +38,9 @@ ls [选项] [目录名]
 -R, –recursive |同时列出所有子目录层
 -s, –size |以块大小为单位列出所有文件的大小
 -S |根据文件大小排序
-–sort=WORD |以下是可选用的 WORD 和它们代表的相应选项：  
-extension -X status -c  
-none -U time -t  
-size -S atime -u  
-time -t access -u  
-version -v use -u  
-
+–sort=WORD |以下是可选用的 WORD 和它们代表的相应选项:<br> extension -X status -c <br> none -U time -t <br> size -S atime -u <br> time -t access -u <br> version -v use -u
 -t |以文件修改时间排序
--u |配合 -lt:显示访问时间而且依访问时间排序  
-配合 -l:显示访问时间但根据名称排序  
-否则：根据访问时间排序
-
+-u |配合 -lt:显示访问时间而且依访问时间排序  <br> 配合 -l:显示访问时间但根据名称排序 <br> 否则：根据访问时间排序
 -U |不进行排序;依文件系统原有的次序列出项目
 -v |根据版本进行排序
 -w, –width=COLS |自行指定屏幕宽度而不使用目前的数值
