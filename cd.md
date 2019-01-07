@@ -1,6 +1,6 @@
 # cd
 
-**cd = change directory**
+**cd = change directory**  
 切换目录到其他目录
 cd 命令后面可以跟相对路径或者绝对路径
 
