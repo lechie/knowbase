@@ -367,7 +367,7 @@ data-service 项目为每次小的改动发布 1.0 快照。
 文件夹结构
 
 文件夹结构 | 描述
-- | -
+-|-
 trucks | 包含 src 文件夹和 pom.xml 文件
 src/main/webapp | 包含 index.jsp 文件和 WEB-INF 文件夹
 src/main/webapp/WEB-INF | 包含 web.xml 文件
