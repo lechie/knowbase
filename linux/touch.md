@@ -15,12 +15,12 @@ touch [选项] 文件名...
 --|--|--
 -a | --time=atime或--time=access或--time=use | 只更改存取时间
 -c | --no-create | 不建立任何文档
--d| | 使用指定的日期时间，而非现在的时间
+-d| | 使用指定的日期时间，而非现在的时间 `touch -d [[CC]YY]MMDD filename...`
 -f| | 此参数将忽略不予处理，仅负责解决BSD版本touch指令的兼容性问题
 -m | --time=mtime或--time=modify | 只更改变动时间
 -r| | 把指定文档或目录的日期时间，统统设成和参考文档或目录的日期时间相同
--t | | 使用指定的日期时间，而非现在的时间
-
+-t | | 使用指定的日期时间，而非现在的时间 `touch -t [CC[YY]MMDDhhmm[.SS] filename...`
+ 
 > -t 说明
 > time规定为如下形式的十进制数:      
 > ```
@@ -36,7 +36,7 @@ touch [选项] 文件名...
 # 创建不存在的文件
 touch a.log b.log
 
-# 更新 a.log的时间和 b.log时间戳相同
+# 更新使 b.log的时间和 a.log时间戳相同
 touch -r a.log b.log
 
 # 如果 a.log不存在，则不创建文件
