@@ -28,19 +28,19 @@ less 的用法比起 more 更加的有弹性。
 
 操作 | 说明
 --|--
-e  ^E  j  ^N 【回车键】| 向下前进翻一行
-y  ^Y  k  ^K  ^P｜向上后退翻一行
-f  ^F  ^V  【空格键】[pagedown]｜向下翻一屏
-b  ^B  ESC-v [pageup]｜ 向上后退一屏
+e、  ^E、  j、  ^N、 【回车键】| 向下前进翻一行
+y、  ^Y、  k、  ^K、  ^P | 向上后退翻一行
+f、  ^F、  ^V、  【空格键、】[pagedown] | 向下翻一屏
+b、  ^B、  ESC-v、 [pageup] | 向上后退一屏
 z| 向下翻一屏（and set window to N）
 w| 向上后退一屏（and set window to N）
 d 【ctrl + D】|向下翻动半页
 u 【ctrl + U】|向上后退半页
 F|Forward forever; like "tail -f"
 r|重绘窗口
-h H |显示帮助界面
+h、 H |显示帮助界面
 v | 使用配置的编辑器编辑当前文件
-q  :q  Q  :Q  ZZ |退出 less 命令
+q、  :q、  Q、 :Q、 ZZ |退出 less 命令
 
 
 
@@ -56,10 +56,10 @@ N |反向重复前一个搜索（与 / 或 ? 有关）
 ## 跳转
 操作 | 说明
 --|--
-G > | 移动到最后一行
-g < | 移动到第一行
-{  (  [ ｜ Find close bracket } ) ].
-}  )  ]｜ Find open bracket { ( [.
+G、 > | 移动到最后一行
+g、 < | 移动到第一行
+{  (  [ |  Find close bracket } ) ].
+}  )  ] |  Find open bracket { ( [.
 
 ## 标记导航
 当查看大文件时，可在任一位置作标记，之后可导航到标有特定标记的文本位置
