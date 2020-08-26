@@ -35,6 +35,7 @@ mkdir -v dir5
 mkdir dir6 dir7 dir8
 
 # 创建多个目录
-mkdir -vp test/{a/, b/, c/{c1,c2}, d/{d1,d2}, e/f/{f1,f2}}
+mkdir -vp test/{a/,b/,c/{c1,c2},d/{d1,d2},e/f/{f1,f2}}
 tree test/
+> 注意上述mkdir指令中","后不能有空格
 ```
