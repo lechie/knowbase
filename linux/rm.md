@@ -1,4 +1,4 @@
-#rm
+# rm
 
 >rm = remove
 
@@ -21,8 +21,8 @@ rm [选项] 文件…
 -i | --interactive | 进行交互式删除
 -r, -R, | --recursive | 指示rm将参数中列出的全部目录和子目录均递归地删除。
 -v | --verbose | 详细显示进行的步骤
- | --help | 显示此帮助信息并退出
- | --version | 输出版本信息并退出
+&nbsp; | --help | 显示此帮助信息并退出
+&nbsp; | --version | 输出版本信息并退出
 
 
 ## 示例
@@ -32,10 +32,9 @@ rm [选项] 文件…
 rm 文件名
 
 
-
-
 # 强行删除file，系统不再提示
 rm -f a.log
+
 
 # 删除任何.log文件；删除前逐一询问确认 
 rm -i *.log
@@ -44,18 +43,22 @@ rm -i *.log
 # 将 dir1 子目录及子目录中所有档案删除
 rm -r dir1
 
+
 # 将 dir2 子目录及子目录中所有档案删除，并且无需确认直接删除
 rm -rf dir2
+
 
 # 删除以 -f 开头的文件
 touch -- -f
 ls -- -f
 rm -- -f
 
+
 # 自定义回收站功能
 myrm(){ D=/tmp/$(date +%Y%m%d%H%M%S); mkdir -p $D; mv "$@" $D && echo "moved to $D ok"; }
 alias rm='myrm'
-# 测试
+
+# 测试自定义回收站功能
 touch 1.log 2.log 3.log
 rm [123].log
 moved to /tmp/20200101150900 ok
