@@ -72,7 +72,7 @@ find . -size +1000c -print
 
 # 高级操作示例
 
-1．使用name选项：
+## 使用name选项
 
 文件名选项是find命令最常用的选项，要么单独使用该选项，要么和其他选项一起使用。
 
@@ -101,7 +101,7 @@ find / -name "*" -print
 find . -name "[a-z]*[4-9].log" -print
 ```
 
-2．用perm选项：
+## 用perm选项
 
 按照文件权限模式用-perm选项,按文件权限模式来查找文件的话。最好使用二进制的权限表示法。  
 
@@ -113,7 +113,7 @@ find . -perm 755 -print
 find . -perm -005
 ```
 
-3．忽略某个目录：
+## 忽略某个目录：
 
 如果在查找文件时希望忽略某个目录，因为你知道那个目录中没有你所要查找的文件，那么可以使用-prune选项来指出需要忽略的目录。
 
@@ -153,7 +153,7 @@ else
 -print  
 ```
 
-4．使用user和nouser选项：
+## 使用user和nouser选项
 ```
 #按文件属主查找文件：
 #在$HOME目录中查找文件属主为peida的文件 
@@ -168,7 +168,7 @@ find /home -nouser -print
 # 说明：这样就能够找到那些属主在/etc/passwd文件中没有有效帐户的文件。在使用-nouser选项时，不必给出用户名
 ```
 
-5．使用group和nogroup选项：
+## 使用group和nogroup选项：
 ```
 #就像user和nouser选项一样，针对文件所属于的用户组， find命令也具有同样的选项，为了在/apps目录下查找属于gem用户组的文件，可以用：  
 find /apps -group gem -print  
@@ -177,7 +177,7 @@ find /apps -group gem -print
 find / -nogroup-print
 ```
 
-6．按照更改时间或访问时间等查找文件：
+## 按照更改时间或访问时间等查找文件
 
 如果希望按照更改时间来查找文件，可以使用mtime,atime或ctime选项。如果系统突然没有可用空间了，很有可能某一个文件的长度在此期间增长迅速，这时就可以用mtime选项来查找这样的文件。  
 
@@ -190,7 +190,7 @@ find / -mtime -5 -print
 find /var/adm -mtime +3 -print
 ```
 
-7．查找比某个文件新或旧的文件：
+## 查找比某个文件新或旧的文件
 
 ```
 # 如果希望查找更改时间比某个文件新但比另一个文件旧的所有文件，可以使用-newer选项。
@@ -204,7 +204,7 @@ find -newer log2012.log ! -newer log2017.log
 find . -newer log2012.log -print
 ```
 
-8．使用type选项：
+## 使用type选项
 ```
 # 在/etc目录下查找所有的目录  
 find /etc -type d -print  
@@ -216,35 +216,37 @@ find . ! -type d -print
 find /etc -type l -print
 ```
 
-9．使用size选项：
+## 使用size选项
 
 可以按照文件长度来查找文件，这里所指的文件长度既可以用块（block）来计量，也可以用字节来计量。以字节计量文件长度的表达形式为N c；以块计量文件长度只用数字表示即可。  
 
 在按照文件长度查找文件时，一般使用这种以字节表示的文件长度，在查看文件系统的大小，因为这时使用块来计量更容易转换。  
 ```
-# 在当前目录下查找文件长度大于1 M字节的文件  
+# 在当前目录下查找文件长度大于1M字节的文件  
 find . -size +1000000c -print
 
-# 在/home/apache目录下查找文件长度恰好为100字节的文件:  
-find /home/apache -size 100c -print  
+# 在/home 目录下查找文件长度为100字节的文件:  
+find /home/ -size 100c -print  
 
 # 在当前目录下查找长度超过10块的文件（一块等于512字节） 
 find . -size +10 -print
 ```
 
-10．使用depth选项：
+## 使用depth选项
 
-在使用find命令时，可能希望先匹配所有的文件，再在子目录中查找。使用depth选项就可以使find命令这样做。这样做的一个原因就是，当在使用find命令向磁带上备份文件系统时，希望首先备份所有的文件，其次再备份子目录中的文件。  
+在使用find命令时，可能希望先匹配所有的文件，再在子目录中查找。使用depth选项就可以使find命令这样做。
+
+这样做的一个原因就是，当在使用find命令向磁带上备份文件系统时，希望首先备份所有的文件，其次再备份子目录中的文件。  
 ```
-# find命令从文件系统的根目录开始，查找一个名为CON.FILE的文件。将首先匹配所有的文件然后再进入子目录中查找
-find / -name "CON.FILE" -depth -print
+# find命令从文件系统的根目录开始，查找一个名为 a.txt 的文件。将首先匹配所有的文件然后再进入子目录中查找
+find / -name "a.txt" -depth -print
 ```
 
-11．使用mount选项： 
+## 使用mount选项
 在当前的文件系统中查找文件（不进入其他文件系统），可以使用find命令的mount选项。
 
 ```
-# 从当前目录开始查找位于本文件系统中文件名以XC结尾的文件  
-find . -name "*.XC" -mount -print 
+# 从当前目录开始查找位于本文件系统中文件名以 swift 结尾的文件  
+find . -name "*.swift" -mount -print 
 ```
 
