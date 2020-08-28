@@ -136,7 +136,7 @@ find test \( -path test/test4 -o -path test/test3 \) -prune -o -print
 # 查找某一确定文件，-name等选项加在-o 之后
 find test \(-path test/test4 -o -path test/test3 \) -prune -o -name "*.log" -print
 ```
-> # -path "test" -prune -o -print 是 -path "test" -a -prune -o -print 的简写表达式按顺序求值, 
+> -path "test" -prune -o -print 是 -path "test" -a -prune -o -print 的简写表达式按顺序求值, 
 > -a 和 -o 都是短路求值，与 shell 的 && 和 || 类似
 >
 > 如果 -path "test" 为真，则求值 -prune , -prune 返回真，与逻辑表达式为真；
@@ -236,9 +236,8 @@ find . -size +10 -print
 
 在使用find命令时，可能希望先匹配所有的文件，再在子目录中查找。使用depth选项就可以使find命令这样做。这样做的一个原因就是，当在使用find命令向磁带上备份文件系统时，希望首先备份所有的文件，其次再备份子目录中的文件。  
 ```
-# find命令从文件系统的根目录开始，查找一个名为CON.FILE的文件。   
+# find命令从文件系统的根目录开始，查找一个名为CON.FILE的文件。将首先匹配所有的文件然后再进入子目录中查找
 find / -name "CON.FILE" -depth -print
-# 它将首先匹配所有的文件然后再进入子目录中查找
 ```
 
 11．使用mount选项： 
